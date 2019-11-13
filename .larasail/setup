@@ -87,7 +87,7 @@ bar
 cyan "| Updating Permissions "
 bar
 
-sudo chown -R larasail:larasail /var/www
+sudo chown -R www-data:root /var/www
 
 bar
 cyan "| Installing Composer ";

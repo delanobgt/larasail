@@ -17,12 +17,12 @@ echo "alias larasail='sh /etc/.larasail/larasail'" >> /etc/bash.bashrc
 
 
 # Create a new password and create our new larasail user
-PASS=$(openssl rand -base64 32)
-useradd -G sudo -d /home/larasail -p $PASS -m larasail
+#PASS=$(openssl rand -base64 32)
+#useradd -G sudo -d /home/larasail -p $PASS -m larasail
 
 
 # Give the larasail user ability to not always require password
-echo 'larasail ALL=(ALL) NOPASSWD: ALL' >> /etc/sudoers
+#echo 'larasail ALL=(ALL) NOPASSWD: ALL' >> /etc/sudoers
 
 
 # Turn on SSH Passwords
@@ -32,12 +32,12 @@ echo 'larasail ALL=(ALL) NOPASSWD: ALL' >> /etc/sudoers
 
 
 # Store the larasail user password
-if [ ! -d /etc/.larasail/tmp ]; then
-  sudo mkdir /etc/.larasail/tmp
-fi
-sudo echo $PASS > /etc/.larasail/tmp/pass
+#if [ ! -d /etc/.larasail/tmp ]; then
+#  sudo mkdir /etc/.larasail/tmp
+#fi
+#sudo echo $PASS > /etc/.larasail/tmp/pass
 
-sudo chown -R larasail:larasail /etc/.larasail/tmp
+#sudo chown -R larasail:larasail /etc/.larasail/tmp
 
 
 # Include our colors and format scripts
@@ -59,4 +59,4 @@ barNoColor
 
 # Remove larasail folder pulled from git repo and switch user to larasail
 rm -rf larasail-master
-su - larasail
+#su - larasail
